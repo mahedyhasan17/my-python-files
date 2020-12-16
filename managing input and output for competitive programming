@@ -1,0 +1,35 @@
+
+# taking input for competitive programming
+# stdin is little bit faster 
+# at first we import stdin from sys then we
+# will use stdin to take input from keyboard
+from sys import stdin 
+
+# by default stdin.readline() will take input and 
+# store in n as string format , so we type cast the 
+# input into int and store it into n  
+n = int(stdin.readline())
+print(n," ",type(n))
+
+
+# taking list input using stdin.readline() and 
+# list comprehenson
+# this will take list_input(list of numbers) until
+# we press enter
+arr = [int(x) for x in stdin.readline().split()]
+print(type(arr[0]) , "\t",arr)
+
+
+# iterating the list arr using for loop 
+
+# way-1:
+z = len(arr)
+for single_element in range(0,z):
+    print(arr[single_element],end=' ')
+
+print('\n')
+
+# way-2:
+for single_element in arr:
+    print(single_element,end=' ')
+print()
