@@ -1,0 +1,13 @@
+solution function 
+
+def MissingNumber(array,n):
+    # code here
+    array.sort()
+    for i in range(0,n-2):
+        if (array[i]-array[i+1] == -2):
+            return int((array[i]+array[i+1])/2)
+    
+    if(n == array[n-2]):
+        return 1
+    else:
+        return n
