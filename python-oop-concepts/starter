@@ -1,0 +1,26 @@
+from math import pi 
+
+class Circle:
+
+    def __init__(self,radius=1.0):
+        self.radius = radius 
+    
+    def __str__(self):
+        return 'This is a circle with radius of {:.2f}'.format(self.radius)
+    
+    def __repr__(self):
+        return 'Circle(radius={})'.format(self.radius)
+
+    def get_area_of_the_circle(self,radius):
+        return pi*(self.radius**2)
+
+
+if __name__ == '__main__':
+    c1 = Circle(2.1)
+    print(c1)
+    print(c1.get_area_of_the_circle(2.6))
+    print(Circle.get_area_of_the_circle.__doc__)
+    print(isinstance(c1,Circle))
+    print(isinstance(c1,str))
+    print(isinstance(c2,Circle))
+
