@@ -1,0 +1,23 @@
+#code
+
+from sys import stdin
+
+def searchElement(arr,n,r):
+
+    for i in range(0,n):
+        if arr[i] == r:
+            return i 
+    return -1 
+
+
+t = int(stdin.readline())
+while(t > 0):
+    n = int(stdin.readline())
+    arr = [int(x) for x in stdin.readline().split()]
+    r = int(stdin.readline())
+    z = searchElement(arr,n,r)
+    print(z)
+    t -= 1
+
+
+
