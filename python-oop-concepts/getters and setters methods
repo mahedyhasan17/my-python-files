@@ -1,0 +1,35 @@
+
+from math import pi 
+
+class Circle:
+
+    def __init__(self,radius=1.0):
+        self.set_radius(radius)
+    
+    def set_radius(self,radius):
+        if radius < 0 :
+            raise ValueError('Radius shall not be negative')
+        self.radius = radius 
+    
+    def get_radius(self):
+        return self.radius 
+    
+    def get_area(self):
+        return self.get_radius()*self.get_radius()*pi 
+
+if __name__ == '__main__':
+    c1 = Circle(2.4)
+    print(c1)
+    print(vars(c1))
+    print(c1.get_area())
+    print(c1.get_radius())
+    c1.set_radius(3.5)
+    print(vars(c1))
+    c1.radius = 7.9
+    print(vars(c1))
+    c2 = Circle()
+    print(c2.get_radius())
+    c3 = Circle(-3.9)
+
+    
+
