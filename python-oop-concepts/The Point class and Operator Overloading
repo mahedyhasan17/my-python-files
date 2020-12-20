@@ -1,0 +1,35 @@
+
+# Python supports operator overloading 
+# like '+', '-', '*', '/', '//' and '%' methods 
+# are respectively __add__(),__sub__(),__mul__(),
+# __truediv__(),__floordiv__() and __mod__()
+
+class Point:
+    def __init__(self,x=0,y=0):
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return '({} , {})'.format(self.x,self.y)
+    
+    def __repr__(self):
+        return 'Point(x = {} , y = {})'.format(self.x,self.y)
+    
+    def __add__(self,right):
+        p = Point(self.x + right.x , self.y + right.y)
+        return p
+    def __mul__(self,factor):
+        self.x *= factor
+        self.y *= factor
+
+
+if __name__ == '__main__':
+    p1 = Point()
+    print(p1) #(0,0)
+    p1.x = 5
+    p1.y = 7 
+    print(p1) #(5.0,7.0)
+    p2 = Point(4,6)
+    print(p2) #(4.0,6.0)
+    print(p1+p2) #this is similar as p1__add__(p2)
+    print(p2*5) #this is similar as p1__mul__(5)
+    print(p2)
