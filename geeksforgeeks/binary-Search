@@ -1,0 +1,21 @@
+
+def searchInSorted(arr,N,K):
+    low = 0
+    high = N-1
+    mid = int((low+high)/2)
+    while( low <= high ):
+        if (K > arr[mid] ):
+            low = mid + 1
+        elif ( K < arr[mid] ):
+            high = mid-1
+        else:
+            return 1
+        mid = int((low+high)/2)
+    return -1 
+
+
+N , K = map(int, input().strip().split())
+arr = list(map(int, input().strip().split()))
+r = searchInSorted(arr,N,K)
+print(r)
+
