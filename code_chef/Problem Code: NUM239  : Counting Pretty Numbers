@@ -1,0 +1,13 @@
+
+t = int(input())
+for _ in range(0,t):
+    z = 0
+    n , m = map(int,input().split())
+    for i in range(n,m+1):
+        k = i % 10 
+        if( k == 2 or k == 3 or k == 9 ):
+            z += 1
+    print(z)
+
+
+
