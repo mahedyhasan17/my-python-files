@@ -1,0 +1,11 @@
+ def searchInsert(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        p = 0
+        for i in range(0,n):
+            
+            if (nums[i] < target):
+                p += 1
+            elif (nums[i] == target):
+                p = i
+        
+        return p
