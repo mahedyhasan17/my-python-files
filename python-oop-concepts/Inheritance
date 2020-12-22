@@ -1,53 +1,66 @@
 
-from math import pi 
+from math import pi
 
 class Circle:
 
-    def __init__(self,radius=1.0):
-        self.radius = radius
+    def __init__(self , _radius=1.3):
+        self._radius = _radius
 
-    def get_radius(self):
-        return self.radius 
+    @property
+    def radius(self):
+        return self._radius 
+
+    @radius.setter
+    def radius(self,_radius):
+        self._radius = _radius
+
+    @radius.getter
+    def radius(self):
+        return self._radius 
+
+    @radius.deleter 
+    def radius(self):
+        del self._radius
 
     def get_area(self):
-        return pi*(self.radius*self.radius)
+        return (self._radius**2)*pi
+
 
 
 class Cylinder(Circle):
 
-    def __init__(self,radius=2.0,height=3.0):
+    def __init__(self,radius=3.4,height=1.7):
         super().__init__(radius)
         self.height = height 
 
     def __str__(self):
-        return 'Cylinder(radius = {} , height = {})'.format(self.radius , self.height)
+        return 'Cylinder(radius={} , height={} , area={})'.format(self.radius,self.height,self.get_area())
 
-    def __repr__(self):
-        return self.__str__()
+    def get_area_of_cylinder(self):
+        return self.get_area()*self.height 
 
-    def get_volume(self):
-        return self.get_area()*self.height
 
 
 
 if __name__ == '__main__':
-    c1 = Circle(3)
-    cy = Cylinder(4,8)
+
+    c1 = Circle()
+    c1.radius = 3.7
+    print(c1.radius)
+    print(c1.get_area())
+    #after inherit Circle in Cylinder 
+
+    cy = Cylinder()
+    cy.radius = 5.9
     print(cy)
-    print(cy.get_volume())
-    print(cy.radius)
-    print(cy.height)
-
-    cy2 = Cylinder()         
-    print(cy2)                
-    print(cy2.get_area())
-    print(cy2.get_volume())
-
-    print(issubclass(Cylinder,Circle))
+    print(cy.get_area_of_cylinder())
+    
+    print(issubclass(Cylinder,Circle))    
     print(issubclass(Circle,Cylinder))
+    print(isinstance(cy,Cylinder))
     print(isinstance(cy,Circle))
+    print(isinstance(c1,Cylinder))
     print(Cylinder.__base__)
     print(Circle.__subclasses__())
-
 
 
