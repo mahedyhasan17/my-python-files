@@ -1,0 +1,67 @@
+
+
+from math import pi
+
+class Shape:
+    def __init__(self,color='red'):
+        self.color = color
+
+    def __str__(self):
+        return 'Shape(color={})'.format(self.color)
+
+    def __repr__(self):
+        return self.__str__(self)
+
+class Circle(Shape):
+    def __init__(self,radius=1.3,color='red'):
+        super().__init__(color)
+        self.radius = radius 
+
+    def __str__(self):
+        return 'Circle(radius={} , color={})'.format(self.radius,self.color)
+
+    def __repr__(self):
+        return self.__str__(self)
+
+    def get_area(self): #method with same name
+        return self.radius*self.radius*pi 
+
+
+class Rectangle(Shape):
+    def __init__(self,color='green',width=1,length=2):
+        super().__init__(color)
+        self.length = length
+        self.width = width 
+
+    def __str__(self):
+        return 'Reactangle({} , length={} , width={})'.format(super().__str__(),self.length,self.width)
+
+    def __repr__(self):
+        return self.__str__(self)
+
+    def get_area(self): #method with same name
+        return self.width * self.length
+
+
+class Square(Rectangle):
+    def __init__(self,side=3.0,color='blue'):
+        super().__init__(color)
+        self.side = side 
+
+    def get_area(self): #method with same name
+        return self.side*self.side 
+
+
+s = Shape()
+print(s)
+
+c = Circle(6,'orange')
+print(c.get_area())
+
+r = Rectangle('tomato')
+print(r)
+
+sq = Square()
+print(sq.get_area())
+
+
