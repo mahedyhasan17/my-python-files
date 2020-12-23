@@ -1,0 +1,54 @@
+
+class GermanLocalizer:
+
+    def __init__(self):
+        self.translations = {
+            "car": "voiture",
+            "bike": "bicyclette", 
+            "cycle":"cyclette",
+        }
+    def localize(self,message):
+        return self.translations.get(msg)
+
+class SpanishLocalizer:
+
+    def __init__(self):
+        self.translations = {
+           "car": "coche", 
+           "bike": "bicicleta", 
+            "cycle":"ciclo",
+        }
+    def localize(self,message):
+        return self.translations.get(msg)
+
+class EnglishLocalizer:
+
+    def __init__(self):
+        self.translations = {
+            "car": "car",
+            "bike": "bike", 
+            "cycle":"cycle",
+        }
+    def localize(self,message):
+        return self.translations.get(msg)
+
+def Factory(language):
+
+    localizers = {
+        'German' : GermanLocalizer,
+        'Spain' : SpanishLocalizer,
+        'English' : EnglishLocalizer
+    }
+
+    return localizers[language]() 
+
+if __name__ == '__main__':
+
+    g = Factory("German")
+    s = Factory("Spain")
+    e = Factory('English')
+
+    message = ['car','bike','cycle']
+    
+    for msg in message:
+        print(e.localize(msg))
