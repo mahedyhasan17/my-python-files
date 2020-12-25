@@ -1,0 +1,50 @@
+
+import random 
+
+class DSA:
+
+    def fee(self):
+        return 1000
+
+    def __str__(self):
+        return 'DSA'
+
+class STL:
+
+    def fee(self):
+        return 2000
+
+    def __str__(self):
+        return 'STL'
+
+
+class SDE:
+
+    def fee(self):
+        return 3000
+
+    def __str__(self):
+        return 'SDE'
+
+
+def random_course():
+    return random.choice([DSA,STL,SDE])()
+
+
+class Course_At_GFG:
+
+    def __init__(self,course_factory):
+        self.course_factory = course_factory
+    
+    def show_course(self):
+        course = self.course_factory()
+        print(f'We have a course named {course}') 
+        print(f'its price is {course.fee()}') 
+
+
+
+if __name__ == '__main__':
+
+    course = Course_At_GFG(random_course)
+    course.show_course()
+    
