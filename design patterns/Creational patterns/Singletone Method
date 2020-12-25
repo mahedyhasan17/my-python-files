@@ -1,0 +1,22 @@
+
+class Singleton:
+
+    shared_instance = 'Geeks'
+
+    def getInstance(self):
+
+        if Singleton.shared_instance == 'Geeks':
+            Singleton()
+        return Singleton.shared_instance
+
+    def __init__(self):
+        if Singleton.shared_instance != 'Geeks':
+            raise Exception('this is Singleton class')
+        else:
+            Singleton.shared_instance = self
+        
+
+if __name__ == '__main__':
+    obj = Singleton()
+    print(obj)
+    print(obj.getInstance())
