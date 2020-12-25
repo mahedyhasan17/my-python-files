@@ -1,0 +1,33 @@
+
+class Washing:
+    def wash(self):
+        print('washing')
+
+class Rinsing:
+    def rinse(self):
+        print('rinse')
+
+
+class Spining:
+    def spin(self):
+        print('spining')
+
+
+class WashingMachine:
+
+    def __init__(self):
+        self.washing = Washing()
+        self.rinsing = Rinsing()
+        self.spining = Spining()
+
+    def startWashing(self):
+        self.washing.wash()
+        self.rinsing.rinse()
+        self.spining.spin()
+
+if __name__ == '__main__':
+
+    WashingMachine = WashingMachine()
+    WashingMachine.startWashing()
+
+  
