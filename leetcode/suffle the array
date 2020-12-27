@@ -1,0 +1,8 @@
+def shuffle(self, nums: List[int], n: int) -> List[int]:
+        r = len(nums)
+        list = []
+        for i in range(0,r//2):
+            list.append(nums[i])
+            list.append(nums[i+n])
+        
+        return list 
